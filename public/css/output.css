@@ -567,8 +567,16 @@ video {
   margin-top: 0.5rem;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .flex {
   display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
 }
 
 .size-6 {
@@ -634,6 +642,26 @@ video {
 
 .h-20 {
   height: 5rem;
+}
+
+.h-\[0px\] {
+  height: 0px;
+}
+
+.h-\[px\] {
+  height: px;
+}
+
+.h-\[60px\] {
+  height: 60px;
+}
+
+.h-\[100px\] {
+  height: 100px;
+}
+
+.h-\[40px\] {
+  height: 40px;
 }
 
 .min-h-screen {
@@ -716,6 +744,26 @@ video {
   width: 500px;
 }
 
+.w-\[0px\] {
+  width: 0px;
+}
+
+.w-\[50p\] {
+  width: 50p;
+}
+
+.w-\[x\] {
+  width: x;
+}
+
+.w-\[100x\] {
+  width: 100x;
+}
+
+.w-\[40px\] {
+  width: 40px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -778,6 +826,10 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .justify-evenly {
