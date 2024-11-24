@@ -1,0 +1,86 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App || Home</title>
+    <link rel="stylesheet" href="../css/output.css">
+
+    <!-- jQuery (remove integrity to fix the error) -->
+    <script async src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        /* Any custom styles */
+    </style>
+</head>
+
+<body class="flex flex-col overflow-hidden">
+    <div class="bg-black/80 text-white px-5 py-2 text-xl">Chat App</div>
+    <div class="flex">
+        <div class="userInfo text-white w-20 bg-black/80 h-dvh flex flex-col justify-end items-center pb-12 gap-2">
+            <img class="w-[50px] h-[50px] rounded-full cursor-pointer "
+                src="https://images.pexels.com/photos/28853291/pexels-photo-28853291/free-photo-of-autumn-train-journey-through-swedish-countryside.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="User">
+            <button class="px-2 py-1 bg-gray-400 rounded">logout</button>
+        </div>
+        <div class="userLists w-[500px] bg-gray-800 p-4">
+            <input type="text" placeholder="search or start new chat " class="w-full p-4 bg-black/80 outline-none cursor-pointer border-b border-green-500 text-white rounded" >
+            <!-- User list items will be appended here dynamically -->
+        </div>
+
+        <div class="userMessages w-full bg-gray-900 flex justify-center items-center gap-3">
+            <!-- If no messages then show this -->
+            <div class="emptymessage flex flex-col items-center border-none">
+            <img  class="w-20 h-20 object-cover"  src="https://t4.ftcdn.net/jpg/03/08/43/19/360_F_308431972_g5fuiXwgOZpDCMFQougq13hgSaQVHVro.jpg" alt="">
+            <p class="text-white my-2">  Chat App - Let’s Get Talking!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Wait for the document to be ready before using jQuery
+        $(document).ready(function () {
+            const users = [
+                {
+                    id: 1,
+                    name: 'Arvind Kumar',
+                    image: 'https://images.pexels.com/photos/28853291/pexels-photo-28853291/free-photo-of-autumn-train-journey-through-swedish-countryside.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                    lastMessage: 'Hello there, how are you?',
+                    lastTime: '11:39'
+                },
+                {
+                    id: 2,
+                    name: 'Ravi Patel',
+                    image: 'https://images.pexels.com/photos/28853291/pexels-photo-28853291/free-photo-of-autumn-train-journey-through-swedish-countryside.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                    lastMessage: 'Are we still on for tomorrow?',
+                    lastTime: '10:15'
+                },
+                {
+                    id: 3,
+                    name: 'Sita Sharma',
+                    image: 'https://images.pexels.com/photos/28853291/pexels-photo-28853291/free-photo-of-autumn-train-journey-through-swedish-countryside.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                    lastMessage: 'Good morning!',
+                    lastTime: '09:00'
+                }
+            ];
+
+            // Dynamically add users to the user list
+            $('.userLists').append(
+                users.map((user) => {
+                    return `
+                        <div class="flex justify-start items-center gap-2 my-2 p-2 hover:bg-gray-600 duration-300 transition-all cursor-pointer">
+                            <img class="w-[30px] h-[30px] object-cover rounded-full" src="${user.image}" alt="${user.name}">
+                            <div class="details">
+                                <p class="text-white font-bold">${user.name}<span class="text-gray-400 text-xs pl-7">${user.lastTime}</span></p>
+                                <p class="text-sm text-gray-300">${user.lastMessage.substring(0, 30)}..</p>
+                                
+                            </div>
+                        </div>
+                    `;
+                }).join('') // Join the array of HTML strings into a single string before appending
+            );
+        });
+    </script>
+</body>
+
+</html>

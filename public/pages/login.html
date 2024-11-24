@@ -1,139 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ChatApp || SignIn</title>
-    <!-- Bootstrap CSS -->
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
 
-    <!-- jQuery -->
-    <script
-      async
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha384-MHO9XkEF9dIw9+IyRdi8jVFI7IE2hsx7Bb74zIEjVRZjBTB8KblvsR3ycyn2bx6m"
-      crossorigin="anonymous"
-    ></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatApp || SignIn</title>
+ 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+  <!-- jQuery -->
+  <script async src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha384-MHO9XkEF9dIw9+IyRdi8jVFI7IE2hsx7Bb74zIEjVRZjBTB8KblvsR3ycyn2bx6m"
+    crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8f9fa;
+      overflow: clip;
+    }
+
+    .half-screen {
+      height: 100lvh;
+    }
+
+    .image-section {
+      animation: imgFadeIn 1.5s ease-in-out;
+    }
+
+    .form-section {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes imgFadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(-1000px);
       }
-      body {
-        background: #f8f9fa;
-        overflow: clip;
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(1000px);
       }
 
-      .half-screen {
-        height: 100lvh;
+      to {
+        opacity: 1;
+        transform: translateX(0);
       }
+    }
 
+    @media (max-width: 768px) {
       .image-section {
-        animation: imgFadeIn 1.5s ease-in-out;
+        display: none;
       }
+    }
+  </style>
+</head>
 
-      .form-section {
-        animation: fadeIn 1.5s ease-in-out;
-      }
-      @keyframes imgFadeIn {
-        from {
-          opacity: 0;
-          transform: translateX(-1000px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateX(1000px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-      @media (max-width: 768px) {
-        .image-section {
-          display: none;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="row half-screen g-0">
-      <!-- Image Section -->
-      <div class="col-md-6 d-none d-md-block image-section">
-        <img
-          class="w-100 h-100"
-          style="object-fit: cover"
-          src="https://images.pexels.com/photos/459203/pexels-photo-459203.jpeg?auto=compress&cs=tinysrgb&w=800&h=900"
-          alt=""
-        />
-      </div>
-
-      <!-- Form Section -->
-      <div class="col-md-6 d-flex form-section">
-        <div class="shadow p-4" style="width: 100%">
-          <h4 class="text-center">
-            Welcome to
-            <span class="bg-black text-white p-2 rounded">ChatApp</span>
-          </h4>
-          <p class="text-center text-muted text-sm">
-            Please Fill your Information to know you better.
-          </p>
-          <form>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                class="form-control"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input
-                type="password"
-                id="password"
-                class="form-control"
-                placeholder="Enter your password"
-                required
-              />
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Login</button>
-            <p class="text-black mt-2 text-center">
-              don't have an account ? <a href="./register.html">sigup here</a>
-            </p>
-          </form>
-        </div>
-      </div>
+<body>
+  <div class="row half-screen g-0">
+    <!-- Image Section -->
+    <div class="col-md-6 d-none d-md-block image-section">
+      <img class="w-100 h-100" style="object-fit: cover"
+        src="https://images.pexels.com/photos/459203/pexels-photo-459203.jpeg?auto=compress&cs=tinysrgb&w=800&h=900"
+        alt="" />
     </div>
 
-    <!-- Bootstrap JavaScript -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      $(document).ready(function () {
-        $("#myButton").click(function () {
-          alert("Button clicked!");
-        });
+    <!-- Form Section -->
+    <div class="col-md-6 d-flex form-section">
+      <div class="shadow p-4" style="width: 100%">
+        <h4 class="text-center">
+          Welcome to
+          <span class="bg-black text-white sm:px-1 lg:px-2 xl:px-2 rounded" ,>ChatApp</span>
+        </h4>
+        <p class="text-center text-muted text-sm">
+          Please Fill your Information to know you better.
+        </p>
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Enter your password" required />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+          <p class="text-black mt-2 text-center">
+            don't have an account ? <a href="./register.html">sigup here</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $("#myButton").click(function () {
+        alert("Button clicked!");
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

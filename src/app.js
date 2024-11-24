@@ -3,9 +3,16 @@ import bodyParser from "body-parser";
 // import mqttClient from "./mqtt";
 import cors from "cors";
 import { PORT } from "./config/config.js";
-
+import path from "path";
+import { fileURLToPath } from "url";
 const app = express();
-app.use(cors({ origin: "http://127.0.0.1:5500" }));
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, "../public")));
+
 app.use(bodyParser.json());
 
 // MQTT publish endpoint
