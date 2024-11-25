@@ -5,6 +5,7 @@ import cors from "cors";
 import { PORT } from "./config/config.js";
 import path from "path";
 import { fileURLToPath } from "url";
+import authRoutes from "./routes/auth.routes.js";
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -14,6 +15,22 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, "../public")));
 
 app.use(bodyParser.json());
+
+app.use("/", (req, res, next) => {
+  try {
+    res.json({
+      success: true,
+      message: "Welcome to Chat App",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+});
+
+app.use("/chatapp/auth", authRoutes);
 
 // MQTT publish endpoint
 // app.post("/publish", (req, res) => {
